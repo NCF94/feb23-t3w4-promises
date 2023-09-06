@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Super Cool Clock</h1>
+    <h2 id="clockDisplay"></h2>
+
+    <!-- <button onclick="askNotificationPermission()">Ask for notifications</button> -->
+
+    <script>
+        let clockDisplayElement = document.getElementById("clockDisplay");
+
+        // clockDisplayElement.innerText = Date.now();
+
+        // setTimeout(() => {
+        //    clockDisplayElement.innerText = new Date(Date.now()).toLocaleTimeString("en-US", {hour12: true});
+
+        // }, 1000);
+
+        // As soon as page loads update clock
+        clockDisplayElement.innerText = new Date(Date.now()).toLocaleTimeString("en-US", {hour12: true});
+        
+        // Add then every 1 second after that, update the clock
+        setInterval(() => {
+            clockDisplayElement.innerText = new Date(Date.now()).toLocaleTimeString("en-US", {hour12: true});
+
+        }, 1000);
+
+        console.log("log happens immediately");
+    </script>
+    <script src="./notifier.js"></script>
+</body>
+</html>
